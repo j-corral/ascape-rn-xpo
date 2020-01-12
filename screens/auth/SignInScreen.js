@@ -1,5 +1,8 @@
-import {AsyncStorage, View, Button, Text} from 'react-native';
 import React from "react";
+import {AsyncStorage} from 'react-native';
+import {Block} from 'galio-framework';
+
+import SignIn from '../../components/molecules/SignIn'
 
 /**
  * SignInScreen class
@@ -14,7 +17,7 @@ class SignInScreen extends React.Component {
      * @type {{title: string}}
      */
     static navigationOptions = {
-        title: 'Please sign in',
+        // title: 'Sign In',
     };
 
     /**
@@ -69,12 +72,12 @@ class SignInScreen extends React.Component {
      */
     render() {
         return (
-            <View>
-                <Text>Login</Text>
-                <Button title="Sign in!" onPress={() => {this._doSignIn()}} />
-                <Button title="Sign up" onPress={() => {this._doSignUp()}} />
-                <Button title="Reset password" onPress={() => {this._doResetPassword()}} />
-            </View>
+            <Block safe middle>
+                <SignIn signInAction={() => {this._doSignIn()}}
+                        signUpAction={() => {this._doSignUp()}}
+                        resetPasswordAction={() => {this._doResetPassword()}}
+                />
+            </Block>
         );
     }
 }
