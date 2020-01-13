@@ -1,8 +1,8 @@
 import React from "react";
-import {AsyncStorage} from 'react-native';
+import {AsyncStorage,SafeAreaView} from 'react-native';
 import {Block} from 'galio-framework';
-
-import SignIn from '../../components/molecules/SignIn'
+import SignIn from '../../components/molecules/sign-in'
+import VerticalGradient from "../../components/atoms/gradients/vertical-gradient";
 
 /**
  * SignInScreen class
@@ -18,6 +18,7 @@ class SignInScreen extends React.Component {
      */
     static navigationOptions = {
         // title: 'Sign In',
+        headerVisible: false,
     };
 
     /**
@@ -72,12 +73,16 @@ class SignInScreen extends React.Component {
      */
     render() {
         return (
-            <Block safe middle>
-                <SignIn signInAction={() => {this._doSignIn()}}
-                        signUpAction={() => {this._doSignUp()}}
-                        resetPasswordAction={() => {this._doResetPassword()}}
-                />
-            </Block>
+            <SafeAreaView style={{flex:1}}>
+                <VerticalGradient>
+                    <Block safe middle>
+                        <SignIn signInAction={() => {this._doSignIn()}}
+                                signUpAction={() => {this._doSignUp()}}
+                                resetPasswordAction={() => {this._doResetPassword()}}
+                        />
+                    </Block>
+                </VerticalGradient>
+            </SafeAreaView>
         );
     }
 }

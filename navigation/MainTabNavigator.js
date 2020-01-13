@@ -11,6 +11,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
+  headerMode: 'none'
 });
 
 const HomeStack = createStackNavigator(

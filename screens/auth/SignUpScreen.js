@@ -1,4 +1,4 @@
-import {View, Button, Text} from 'react-native';
+import {SafeAreaView, Button, Text} from 'react-native';
 import React from "react";
 
 /**
@@ -14,6 +14,7 @@ class SignUpScreen extends React.Component {
      */
     static navigationOptions = {
         title: 'Sign Up',
+        headerVisible: false,
     };
 
     /**
@@ -42,10 +43,10 @@ class SignUpScreen extends React.Component {
      */
     render() {
         return (
-            <View>
+            <SafeAreaView style={{flex:1}}>
                 <Text>Sign Up</Text>
                 <Button title="Sign Up" onPress={() => {this._doSignUp()}} />
-            </View>
+            </SafeAreaView>
         );
     }
 }
