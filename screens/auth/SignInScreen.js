@@ -1,8 +1,9 @@
 import React from "react";
-import {AsyncStorage,SafeAreaView} from 'react-native';
+import {AsyncStorage, SafeAreaView, View} from 'react-native';
 import {Block} from 'galio-framework';
 import SignIn from '../../components/molecules/sign-in'
 import VerticalGradient from "../../components/atoms/gradients/vertical-gradient";
+import Logo from "../../assets/images/ascape.svg";
 
 /**
  * SignInScreen class
