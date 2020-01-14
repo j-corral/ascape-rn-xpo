@@ -1,18 +1,18 @@
 import React from 'react';
-import {Image, View} from 'react-native';
 import {theme, Block, Text }from 'galio-framework';
 import MainButton from "../../atoms/buttons/main-button";
 import TextInput from "../../atoms/inputs/text-input";
 import TextButton from "../../atoms/buttons/text-button";
 import {Svg, Ellipse, SvgUri} from "react-native-svg";
 import Logo from "../../../assets/images/ascape.svg";
+import IconButton from "../../atoms/buttons/icon-button";
 
 export default class SignIn extends React.Component{
 
     _displaySignInButton() {
         if(this.props.signInAction) {
             return (
-                <MainButton title="Sign In" onPress={this.props.signInAction} />
+                <MainButton title="Sign In" onPress={this.props.signInAction} >Sign In</MainButton>
             )
         }
     }
@@ -20,7 +20,7 @@ export default class SignIn extends React.Component{
     _displaySignUpButton() {
         if(this.props.signUpAction) {
             return (
-                <TextButton  title="Don't have an account? Sign Up" onPress={this.props.signUpAction} />
+                <TextButton onPress={this.props.signUpAction} >Don't have an account? Sign Up</TextButton>
             )
         }
     }
@@ -28,7 +28,7 @@ export default class SignIn extends React.Component{
     _displayResetPasswordButton() {
         if(this.props.resetPasswordAction) {
             return (
-                <TextButton title="Forgot your password?" onPress={this.props.resetPasswordAction} />
+                <TextButton onPress={this.props.resetPasswordAction} >Forgot your password?</TextButton>
             )
         }
     }

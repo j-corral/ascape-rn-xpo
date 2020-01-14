@@ -1,5 +1,6 @@
 import {SafeAreaView, Button, Text} from 'react-native';
 import React from "react";
+import SignUp from "../../components/templates/sign-up";
 
 /**
  * SignUpScreen class
@@ -12,10 +13,9 @@ class SignUpScreen extends React.Component {
     /**
      * @type {{title: string}}
      */
-    static navigationOptions = {
-        title: 'Sign Up',
-        headerVisible: false,
-    };
+    /*static navigationOptions = {
+        // title: 'Sign Up',
+    };*/
 
     /**
      * Description of doSignUp
@@ -28,8 +28,21 @@ class SignUpScreen extends React.Component {
      */
     _doSignUp = () => {
         console.log('User Signed Up');
-        let bResult = this.props.navigation.navigate('SignIn');
+        let bResult = this.props.navigation.navigate('Main');
+        return bResult;
+    };
 
+    /**
+     * Description of _signInAction
+     * @author Jonathan Corral
+     * @version 0.1
+     * @since 0.1
+     *
+     * @return {boolean | NavigationNavigateAction | Promise<WindowClient | null>}
+     * @private
+     */
+    _signInAction = () => {
+        let bResult = this.props.navigation.goBack();
         return bResult;
     };
 
@@ -43,10 +56,7 @@ class SignUpScreen extends React.Component {
      */
     render() {
         return (
-            <SafeAreaView style={{flex:1}}>
-                <Text>Sign Up</Text>
-                <Button title="Sign Up" onPress={() => {this._doSignUp()}} />
-            </SafeAreaView>
+            <SignUp doSignUp={() => this._doSignUp()} signInAction={() => this._signInAction()}/>
         );
     }
 }

@@ -8,7 +8,7 @@ export default class TextInput extends Input{
             <Input placeholder={this.props.placeholder}
                    label={this.props.label}
                    rounded
-                   placeholderTextColor='#fff'
+                   placeholderTextColor='#ededed'
                    bgColor='transparent'
                    color='#ffffff'
                    style={{borderColor:"#fff"}}

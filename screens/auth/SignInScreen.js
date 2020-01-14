@@ -1,6 +1,6 @@
 import React from "react";
 import {AsyncStorage, SafeAreaView, View} from 'react-native';
-import {Block} from 'galio-framework';
+import {Block, Text} from 'galio-framework';
 import SignIn from '../../components/molecules/sign-in'
 import VerticalGradient from "../../components/atoms/gradients/vertical-gradient";
 import Logo from "../../assets/images/ascape.svg";
@@ -17,10 +17,9 @@ class SignInScreen extends React.Component {
      *
      * @type {{title: string}}
      */
-    static navigationOptions = {
+    /*static navigationOptions = {
         // title: 'Sign In',
-        headerVisible: false,
-    };
+    };*/
 
     /**
      * Description of doSignIn

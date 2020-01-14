@@ -3,20 +3,29 @@ import {Button}from 'galio-framework';
 
 export default class IconButton extends Button {
 
+    /**
+     *
+     * @return {Button}
+     */
     render() {
+        const {...extraProps} = this.props;
         return (
             <Button onlyIcon
                     round
-                    color={this.props.color ?? 'transparent'}
-                    iconFamily={this.props.iconFamily ?? 'antdesign'}
-                    iconSize={this.props.iconSize ?? 40}
-                    iconColor={this.props.iconColor ?? 'white'}
-                    icon={this.props.icon}
-                    onPress={this.props.onPress}
-                    title={this.props.title}
+                    color={Prop.color}
+                    iconFamily={Prop.iconFamily}
+                    iconSize={Prop.iconSize}
+                    iconColor={Prop.iconColor}
+                    {...extraProps}
             >
-                {this.props.title}
             </Button>
         )
     }
 }
+
+const Prop = {
+    color: 'transparent',
+    iconFamily: 'antdesign',
+    iconSize: 40,
+    iconColor: 'white',
+};

@@ -1,19 +1,29 @@
 import React from 'react';
-import {Button}from 'galio-framework';
+import {Button} from 'galio-framework';
+import Style from "./index.style";
 
+/**
+ *
+ */
 export default class MainButton extends Button {
 
+    /**
+     *
+     * @return {Button}
+     */
     render() {
+        const {...extraProps} = this.props;
         return (
-            <Button title={this.props.title}
-                    uppercase={this.props.uppercase}
-                    round
-                    color="#fff"
-                    textStyle={{color:'#5f00bc', fontWeight:'bold'}}
-                    onPress={this.props.onPress}
+            <Button round
+                    color={Prop.color}
+                    textStyle={Style.textStyle}
+                    {...extraProps}
             >
-                {this.props.title}
             </Button>
         )
     }
 }
+
+const Prop = {
+    color: 'white',
+};
