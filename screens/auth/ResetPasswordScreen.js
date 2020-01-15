@@ -1,5 +1,5 @@
-import {View, Button, Text} from 'react-native';
 import React from "react";
+import ResetPasswordTemplate from "../../components/templates/authentication/reset-password";
 
 /**
  * ResetPasswordScreen class
@@ -13,7 +13,7 @@ class ResetPasswordScreen extends React.Component {
      * @type {{title: string}}
      */
     static navigationOptions = {
-        title: 'Reset Password',
+        //title: 'Reset Password',
     };
 
     /**
@@ -42,10 +42,7 @@ class ResetPasswordScreen extends React.Component {
      */
     render() {
         return (
-            <View>
-                <Text>Reset Password</Text>
-                <Button title="Reset password" onPress={() => {this._doResetPassword()}} />
-            </View>
+            <ResetPasswordTemplate doResetPassword={() => {this._doResetPassword()}} />
         );
     }
 }

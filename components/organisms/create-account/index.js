@@ -6,7 +6,6 @@ export default class CreateAccount extends React.Component{
 
     render() {
         return (
-            // <SignUp doSignUp={() => this._doSignUp()} />
             <SignUp {...this.props} />
         )
     }
