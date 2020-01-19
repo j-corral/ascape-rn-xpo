@@ -1,6 +1,6 @@
 import {SafeAreaView, Button, Text} from 'react-native';
 import React from "react";
-import SignUp from "../../components/templates/sign-up";
+import SignUpTemplate from "../../components/templates/authentication/sign-up";
 
 /**
  * SignUpScreen class
@@ -56,7 +56,7 @@ class SignUpScreen extends React.Component {
      */
     render() {
         return (
-            <SignUp doSignUp={() => this._doSignUp()} signInAction={() => this._signInAction()}/>
+            <SignUpTemplate doSignUp={() => this._doSignUp()} signInAction={() => this._signInAction()}/>
         );
     }
 }
