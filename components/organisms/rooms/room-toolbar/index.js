@@ -2,6 +2,11 @@ import React from 'react';
 import { withNavigation } from 'react-navigation';
 import {Block} from "galio-framework";
 
+// Redux Link
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+
 // Molecules import
 import SearchForm from "../../../molecules/forms/search-form";
 import IconSwitch from "../../../molecules/switchs/icon-switch";
@@ -10,21 +15,11 @@ class RoomToolbar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            switchValue: false,
-        };
     }
 
     _switchViewMode = (value) => {
-        this.setState({switchValue: !this.state.switchValue});
-        console.log("new val:" + this.state.switchValue);
-
-        if(this.state.switchValue) {
-            this.props.navigation.navigate('RoomList');
-        } else {
-            this.props.navigation.navigate('RoomMap');
-        }
-
+        const action = { type: "SWITCH_MODE", value: this.props.displayMode };
+        this.props.dispatch(action);
     };
 
     render() {
@@ -33,10 +28,21 @@ class RoomToolbar extends React.Component {
                 {/*Molecule search*/}
                 <SearchForm />
                 {/* Molecule IconSwitch*/}
-                <IconSwitch leftIcon="align-left" rightIcon="map-pin" onValueChange={() => this._switchViewMode()} switchValue={this.state.switchValue} />
+                <IconSwitch leftIcon="align-left" rightIcon="map-pin" onValueChange={() => this._switchViewMode()} switchValue={this.props.displayMode} />
             </Block>
         )
     }
 }
 
-export default withNavigation(RoomToolbar);
+const mapStateToProps = (state) => {
+    return {
+        displayMode: state.displayMode
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatch: (action) => { dispatch(action) }
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(RoomToolbar);

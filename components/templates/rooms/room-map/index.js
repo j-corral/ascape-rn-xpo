@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
-import {Block} from 'galio-framework';
-import MapView from 'react-native-maps';
+import {Block, Text} from 'galio-framework';
+// import MapView from 'react-native-maps';
 
 // Organisms import
 import RoomToolbar from "../../../organisms/rooms/room-toolbar";
@@ -11,7 +11,8 @@ export default class RoomMapTemplate extends React.Component{
     render() {
         return (
             <Block flex={1} middle>
-                <MapView style={styles.mapStyle} region={Props.region} />
+                <Text>room map</Text>
+                {/*<MapView style={styles.mapStyle} region={Props.region} />*/}
             </Block>
         )
     }

@@ -5,16 +5,19 @@ import RoomToolbar from "../../organisms/rooms/room-toolbar";
 import RoomListTemplate from "./room-list";
 import RoomMapTemplate from "./room-map";
 
-export default class RoomsTemplate extends React.Component {
+// Redux Link
+import {connect} from 'react-redux';
+
+class RoomsTemplate extends React.Component {
 
     _displayList = () => {
-        if(1) {
+        if(this.props.displayMode === false) {
             return (<RoomListTemplate />)
         }
     };
 
     _displayMap = () => {
-        if(1 > 2) {
+        if(this.props.displayMode === true) {
             return (<RoomMapTemplate />)
         }
     };
@@ -31,3 +34,17 @@ export default class RoomsTemplate extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        displayMode: state.displayMode
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatch: (action) => { dispatch(action) }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RoomsTemplate);
