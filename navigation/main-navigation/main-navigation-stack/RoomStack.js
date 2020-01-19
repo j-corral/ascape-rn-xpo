@@ -6,11 +6,11 @@ import { Icon } from 'galio-framework';
 
 
 // Screens import
-import RoomListScreen from "../../../screens/rooms/room-list/RoomListScreen";
+import RoomsScreen from "../../../screens/rooms/RoomsScreen";
 
 const RoomStack = createStackNavigator(
     {
-        RoomList: RoomListScreen,
+        Rooms: RoomsScreen,
     },
     {
         defaultNavigationOptions: {
