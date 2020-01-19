@@ -4,20 +4,18 @@ import {Input} from 'galio-framework';
 export default class TextInput extends Input{
 
     render() {
+        const {...extraProps} = this.props;
         return (
-            <Input placeholder={this.props.placeholder}
-                   label={this.props.label}
-                   rounded
+            <Input rounded
                    placeholderTextColor='#ededed'
                    bgColor='transparent'
                    color='#ffffff'
                    style={{borderColor:"#fff"}}
-                   password={this.props.password}
-                   viewPass={this.props.viewPass}
                    icon={this.props.icon} right
                    family="antdesign"
                    iconSize={16}
                    iconColor="#fff"
+                   {...extraProps}
             />
         )
     }
