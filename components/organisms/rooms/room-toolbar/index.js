@@ -24,7 +24,7 @@ class RoomToolbar extends React.Component {
 
     render() {
         return (
-            <Block flex={0} row space="around">
+            <Block flex={0} row space="around" style={{backgroundColor:'#f7f9ff'}}>
                 {/*Molecule search*/}
                 <SearchForm />
                 {/* Molecule IconSwitch*/}
