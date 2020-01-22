@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
 import {Block} from 'galio-framework';
 import MapView from 'react-native-maps';
+import RoomCalendar from "../../../organisms/rooms/room-calendar";
 
 // Organisms import
 
@@ -9,8 +10,11 @@ export default class RoomMapTemplate extends React.Component{
 
     render() {
         return (
-            <Block flex={1} middle>
-                <MapView style={styles.mapStyle} region={Props.region} />
+            <Block flex={1} space="around" style={{backgroundColor:'#f7f9ff', paddingTop:50}}>
+                <RoomCalendar />
+                <Block >
+                    <MapView style={styles.mapStyle} region={Props.region} />
+                </Block>
             </Block>
         )
     }
