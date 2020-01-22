@@ -26,7 +26,7 @@ class RoomsTemplate extends React.Component {
         return (
             <SafeAreaView style={{flex:1}} >
                 <StatusBar barStyle="dark-content" />
-                <NavBar title="Rooms" style={{backgroundColor:'#f7f9ff'}} titleStyle={{fontSize:16, fontWeight:'bold', paddingTop:15}} />
+                <NavBar title="Rooms" style={{backgroundColor:'#f7f9ff'}} titleStyle={{color:'#5f00bc', fontSize:16, fontWeight:'bold', paddingTop:15}} />
                 {/* Organism room-toolbar */}
                 <RoomToolbar/>
                 {this._displayList()}
