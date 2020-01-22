@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView} from "react-native";
+import {SafeAreaView, StatusBar} from "react-native";
 import {Block, NavBar, Text} from "galio-framework";
 import RoomToolbar from "../../organisms/rooms/room-toolbar";
 import RoomListTemplate from "./room-list";
@@ -24,8 +24,9 @@ class RoomsTemplate extends React.Component {
 
     render() {
         return (
-            <SafeAreaView style={{flex:1}}>
-                <NavBar title="Rooms" transparent />
+            <SafeAreaView style={{flex:1}} >
+                <StatusBar barStyle="dark-content" />
+                <NavBar title="Rooms" style={{backgroundColor:'#f7f9ff'}} titleStyle={{fontSize:16, fontWeight:'bold', paddingTop:15}} />
                 {/* Organism room-toolbar */}
                 <RoomToolbar/>
                 {this._displayList()}
