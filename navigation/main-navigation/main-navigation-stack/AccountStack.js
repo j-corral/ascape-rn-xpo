@@ -7,9 +7,11 @@ import { Icon } from 'galio-framework';
 
 // Screens import
 import AccountProfileScreen from "../../../screens/account/account-profile/AccountProfileScreen";
+import AccountSettingsScreen from "../../../screens/account/account-settings/AccountSettingsScreen";
 
 const AccountStack = createStackNavigator(
     {
+        AccountSettings: AccountSettingsScreen,
         AccountProfile: AccountProfileScreen,
     },
     {
