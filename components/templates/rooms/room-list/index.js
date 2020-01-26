@@ -20,7 +20,6 @@ export default class RoomListTemplate extends React.Component{
     randPicture = () => {
         let rand = this.randInt();
         let picture = "https://picsum.photos/id/"+rand+"/600/400";
-        console.log(picture);
         return picture;
     };
 
