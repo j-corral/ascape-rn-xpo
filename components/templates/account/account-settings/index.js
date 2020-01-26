@@ -169,7 +169,7 @@ const list = [
         leftIcon: {
             name: 'log-out',
             type:'feather',
-            color:'red',
+            color:'#fd003a',
         },
         bottomDivider:false,
         // chevron:false,
