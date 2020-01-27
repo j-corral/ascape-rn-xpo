@@ -1,19 +1,45 @@
 import React from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
 import {Block} from 'galio-framework';
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 import RoomCalendar from "../../../organisms/rooms/room-calendar";
 
 // Organisms import
 
 export default class RoomMapTemplate extends React.Component{
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            markers: [
+                {
+                    id:1,
+                    latlng: {
+                        latitude: 43.6111832,
+                        longitude: 1.4351475,
+                    },
+                    title:'HintHunt',
+                    description: 'Missions: \nTorpedo\nDeep Down',
+                },
+            ],
+        };
+    }
+
     render() {
         return (
             <Block flex={1} space="around" style={{backgroundColor:'#f7f9ff', paddingTop:50}}>
                 <RoomCalendar />
                 <Block >
-                    <MapView style={styles.mapStyle} region={Props.region} />
+                    <MapView style={styles.mapStyle} region={Props.region}>
+                        {this.state.markers.map(marker => (
+                            <Marker
+                                key={marker.id}
+                                coordinate={marker.latlng}
+                                title={marker.title}
+                                description={marker.description}
+                            />
+                        ))}
+                    </MapView>
                 </Block>
             </Block>
         )
